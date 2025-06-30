@@ -55,7 +55,7 @@ document.getElementById("chat-send-btn").addEventListener("click", () => {
   userDiv.style.marginBottom = "0.5rem";
   messages.appendChild(userDiv);
 
-  // Simulate bot reply
+  
   const botDiv = document.createElement("div");
   botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
   botDiv.style.color = "#bbb";
@@ -69,3 +69,18 @@ const botDiv = document.createElement("div");
 botDiv.classList.add("chat-message-bot");
 botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
 messages.appendChild(botDiv);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+  });
