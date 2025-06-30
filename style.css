@@ -141,19 +141,18 @@ header::before {
 .footer__cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  align-items: start;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
   position: relative;
   z-index: 1;
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 10px;
-  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card:hover {
@@ -207,4 +206,10 @@ header::before {
   color: var(--extra-light);
   cursor: pointer;
   font-size: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+  .footer__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
