@@ -11,46 +11,29 @@
   }
   
   body {
-    font-family: 'Playfair Display', serif;
-    background-color: #f8f6f3;
-    color: #111;
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
+    color: var(--extra-light);
     line-height: 1.6;
   }
   
-  /* ===== Navbar ===== */
-  nav.navbar {
-    position: absolute;
+  nav {
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100vw;
-    background: transparent;
-    z-index: 999;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  nav.navbar.scrolled {
-    position: fixed;
-    background-color: #f8f6f3;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  }
-  
-  .nav__container {
-    max-width: 1600px;
     width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .nav__logo {
-    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    backdrop-filter: blur(8px);
   }
   
   .logo-image {
     height: 40px;
-    display: block;
   }
   
   .nav__links {
@@ -60,7 +43,7 @@
   }
   
   .nav__links a {
-    color: #111;
+    color: var(--extra-light);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -71,10 +54,10 @@
   }
   
   .contact__btn {
-    border: 2px solid #111;
+    border: 2px solid var(--extra-light);
     padding: 0.5rem 1.5rem;
     position: relative;
-    transition: background 0.3s, color 0.3s;
+    transition: background 0.3s;
   }
   
   .contact__btn:hover {
@@ -82,7 +65,6 @@
     color: #fff;
   }
   
-  /* ===== Hero & Header ===== */
   header {
     background: url("src/agency.png") center center/cover no-repeat;
     position: relative;
@@ -135,19 +117,21 @@
     right: -120%;
     height: 5px;
     width: 100%;
-    background-image: linear-gradient(to right, var(--primary-color), transparent);
+    background-image: linear-gradient(
+      to right,
+      var(--primary-color),
+      transparent
+    );
     border-radius: 5px;
     transform: translateY(-50%);
   }
   
-  /* ===== Cards ===== */
   .footer__cards {
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     z-index: 1;
-    padding: 0 1rem;
   }
   
   .card {
@@ -180,7 +164,6 @@
     color: #e5e5e5;
   }
   
-  /* ===== Responsive Typography ===== */
   @media (min-width: 768px) {
     .header__content h1 {
       font-size: 3.5rem;
@@ -197,7 +180,6 @@
     }
   }
   
-  /* ===== Animation Keyframes ===== */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -208,8 +190,7 @@
       transform: translateY(0);
     }
   }
-  
-  /* ===== Chatbot Styling ===== */
+
   .chatbot-container {
     position: fixed;
     bottom: 20px;
@@ -278,7 +259,7 @@
     padding: 0 1rem;
     cursor: pointer;
   }
-  
+
   .chat-message-bot {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.75rem 1rem;
@@ -289,103 +270,3 @@
     font-size: 0.9rem;
   }
   
-  /* ===== Mobile Fixes ===== */
-  @media (max-width: 768px) {
-    .nav__container {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
-    }
-  
-    .nav__links {
-      flex-direction: column;
-      width: 100%;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-  
-    .nav__links .link {
-      width: 100%;
-    }
-  
-    .nav__links a {
-      display: block;
-      width: 100%;
-      padding: 0.5rem 0;
-      font-size: 1rem;
-    }
-  
-    .header__content h1 {
-      font-size: 2rem;
-    }
-  
-    .start__project {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-  
-    .card {
-      padding: 1.5rem;
-    }
-  
-    .card h5 {
-      font-size: 1rem;
-    }
-  
-    .card p {
-      font-size: 0.85rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .chat-window {
-      width: 90vw;
-      height: 70vh;
-      right: 5vw;
-      bottom: 80px;
-    }
-  
-    .chat-toggle {
-      width: 50px;
-      height: 50px;
-      font-size: 1.2rem;
-    }
-  
-    .header__container {
-      padding: 1rem;
-    }
-  }
-  /* Hamburger button (mobile only) */
-.hamburger {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    display: none;
-    cursor: pointer;
-    color: #111;
-  }
-  
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
-    .nav__links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #f8f6f3;
-      margin-top: 1rem;
-      padding: 1rem 0;
-      border-top: 1px solid #ddd;
-    }
-  
-    .nav__links.active {
-      display: flex;
-    }
-  
-    .nav__links a {
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-    }
-  }
