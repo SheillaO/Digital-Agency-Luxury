@@ -37,3 +37,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.getElementById("chat-toggle").addEventListener("click", () => {
+  const chatWindow = document.getElementById("chat-window");
+  chatWindow.style.display =
+    chatWindow.style.display === "flex" ? "none" : "flex";
+});
+
+document.getElementById("chat-send-btn").addEventListener("click", () => {
+  const input = document.getElementById("chat-input-field");
+  const messages = document.getElementById("chat-messages");
+  const userMsg = input.value.trim();
+
+  if (userMsg === "") return;
+
+  // Add user message
+  const userDiv = document.createElement("div");
+  userDiv.textContent = "You: " + userMsg;
+  userDiv.style.marginBottom = "0.5rem";
+  messages.appendChild(userDiv);
+
+  // Simulate bot reply
+  const botDiv = document.createElement("div");
+  botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
+  botDiv.style.color = "#bbb";
+  messages.appendChild(botDiv);
+
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+});
+
+const botDiv = document.createElement("div");
+botDiv.classList.add("chat-message-bot");
+botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
+messages.appendChild(botDiv);
