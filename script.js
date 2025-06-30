@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");
 
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(card);
   });
 
-  
   cards.forEach((card) => {
     const para = card.querySelector("p");
     const fullText = para.innerText;
