@@ -1,28 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ================= Animate Cards =================
   const cards = document.querySelectorAll(".card");
 
-  const observer = new IntersectionObserver(
+  const cardObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          cardObserver.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.2,
-    }
+    { threshold: 0.2 }
   );
 
   cards.forEach((card) => {
-    observer.observe(card);
-  });
+    cardObserver.observe(card);
 
-  cards.forEach((card) => {
+    // Add Read More logic
     const para = card.querySelector("p");
     const fullText = para.innerText;
+
     if (fullText.length > 350) {
-      para.innerText = fullText.slice(0, 350) + "...";
+      const shortText = fullText.slice(0, 350) + "...";
+      para.innerText = shortText;
+
       const moreBtn = document.createElement("button");
       moreBtn.innerText = "Read more";
       moreBtn.classList.add("read-more-btn");
@@ -34,53 +36,62 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-});
 
-document.getElementById("chat-toggle").addEventListener("click", () => {
+  // ================= Chatbot Toggle =================
+  const chatToggle = document.getElementById("chat-toggle");
   const chatWindow = document.getElementById("chat-window");
-  chatWindow.style.display =
-    chatWindow.style.display === "flex" ? "none" : "flex";
-});
 
-document.getElementById("chat-send-btn").addEventListener("click", () => {
-  const input = document.getElementById("chat-input-field");
-  const messages = document.getElementById("chat-messages");
-  const userMsg = input.value.trim();
+  chatToggle.addEventListener("click", () => {
+    chatWindow.style.display =
+      chatWindow.style.display === "flex" ? "none" : "flex";
+  });
 
-  if (userMsg === "") return;
+  // ================= Chatbot Message Handling =================
+  const chatSendBtn = document.getElementById("chat-send-btn");
+  const chatInput = document.getElementById("chat-input-field");
+  const chatMessages = document.getElementById("chat-messages");
 
-  // Add user message
-  const userDiv = document.createElement("div");
-  userDiv.textContent = "You: " + userMsg;
-  userDiv.style.marginBottom = "0.5rem";
-  messages.appendChild(userDiv);
+  chatSendBtn.addEventListener("click", () => {
+    const userMsg = chatInput.value.trim();
+    if (!userMsg) return;
 
-  
-  const botDiv = document.createElement("div");
-  botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
-  botDiv.style.color = "#bbb";
-  messages.appendChild(botDiv);
+    const userDiv = document.createElement("div");
+    userDiv.textContent = "You: " + userMsg;
+    userDiv.style.marginBottom = "0.5rem";
+    chatMessages.appendChild(userDiv);
 
-  input.value = "";
-  messages.scrollTop = messages.scrollHeight;
-});
+    const botDiv = document.createElement("div");
+    botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
+    botDiv.classList.add("chat-message-bot");
+    chatMessages.appendChild(botDiv);
 
-const botDiv = document.createElement("div");
-botDiv.classList.add("chat-message-bot");
-botDiv.textContent = "S & A Assistant: We'll get back to you shortly.";
-messages.appendChild(botDiv);
+    chatInput.value = "";
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  });
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll('[data-animate]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+  // ================= Animate [data-animate] Elements =================
+  const animatedElements = document.querySelectorAll("[data-animate]");
+  const animateObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          entry.target.classList.add("visible");
+          animateObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    },
+    { threshold: 0.1 }
+  );
 
-    elements.forEach(el => observer.observe(el));
+  animatedElements.forEach((el) => animateObserver.observe(el));
+
+  // ================= Sticky Navbar =================
+  const navbar = document.querySelector(".navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
   });
+});
