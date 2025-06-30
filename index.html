@@ -16,7 +16,8 @@
         <div class="nav__logo">
             <img src="src/sa-logo.png" alt="S & A Luxury Logo" class="logo-image" />
         </div>
-        <ul class="nav__links">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="nav__links" id="nav-links">
             <li class="link"><a href="#">About</a></li>
             <li class="link"><a href="#">Case Studies</a></li>
             <li class="link"><a href="#">News</a></li>
@@ -32,7 +33,6 @@
             </div>
 
             <div class="footer__cards">
-
                 <div class="card">
                     <h4>01</h4>
                     <h5>The Art of Exceptional</h5>
@@ -74,13 +74,15 @@
                         with cultural nuance. True luxury is both universal and deeply personal.
                     </p>
                 </div>
-
             </div>
         </div>
     </header>
 
+    <!-- Floating Chat Toggle Button -->
+    <button id="chat-toggle" class="chatbot-fab" title="Ask S & A 🌟">💬</button>
+
+    <!-- Chatbot Container -->
     <div class="chatbot-container">
-        <button id="chat-toggle" class="chat-toggle">💬</button>
         <div class="chat-window" id="chat-window">
             <div class="chat-header">S & A Assistant</div>
             <div class="chat-messages" id="chat-messages">
@@ -96,7 +98,7 @@
         </div>
     </div>
 
-    <script defer src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

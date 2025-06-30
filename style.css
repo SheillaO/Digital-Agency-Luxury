@@ -269,4 +269,77 @@
     font-style: italic;
     font-size: 0.9rem;
   }
+
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1001;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav__links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 75px;
+      left: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(8px);
+    }
+  
+    .nav__links.show-nav {
+      display: flex;
+    }
+  
+    .nav__links .link {
+      margin-bottom: 1rem;
+    }
+  
+    .nav__links .link a {
+      font-size: 1.1rem;
+      color: var(--extra-light);
+    }
+  
+    .contact__btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* === Chatbot Floating Button Upgrade === */
+  .chatbot-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 22px;
+    padding: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    text-align: center;
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+    transition: transform 0.3s ease;
+  }
+  .chatbot-fab:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(180, 83, 9, 0.5); }
+    70% { box-shadow: 0 0 0 14px rgba(180, 83, 9, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(180, 83, 9, 0); }
+  }
   
