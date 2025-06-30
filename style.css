@@ -355,4 +355,37 @@
       padding: 1rem;
     }
   }
+  /* Hamburger button (mobile only) */
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+    color: #111;
+  }
   
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav__links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #f8f6f3;
+      margin-top: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid #ddd;
+    }
+  
+    .nav__links.active {
+      display: flex;
+    }
+  
+    .nav__links a {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+    }
+  }
