@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-    <title>S & A Luxury | Digital Agency Portfolio Page</title>
+    <title>S &amp; A Luxury | Digital Agency Portfolio Page</title>
 </head>
 
 <body>
     <nav>
         <div class="nav__logo">
-            <img src="src/sa-logo.png" alt="S & A Luxury Logo" class="logo-image" />
+            <img src="src/sa-logo.png" alt="S &amp; A Luxury Logo" class="logo-image" />
         </div>
         <div class="hamburger" id="hamburger">&#9776;</div>
         <ul class="nav__links" id="nav-links">
-            <li class="link"><a href="#">About</a></li>
-            <li class="link"><a href="#">Case Studies</a></li>
-            <li class="link"><a href="#">News</a></li>
-            <li class="link"><a href="#" class="contact__btn">Contact Us</a></li>
+            <li class="link"><a href="#about">About</a></li>
+            <li class="link"><a href="#case-studies">Case Studies</a></li>
+            <li class="link"><a href="#news">News</a></li>
+            <li class="link"><a href="#contact" class="contact__btn">Contact Us</a></li>
         </ul>
     </nav>
 
     <header>
         <div class="header__container">
             <div class="header__content">
-                <h1><strong>We Don't Just Create Campaigns</strong><strong> Craft Legacies.</strong></h1>
-                <a href="#" class="start__project">Where Vision Meets Precision</a>
+                <h1><strong>We Don't Just Create Campaigns</strong><strong>We Craft Legacies.</strong></h1>
+                <a href="#contact" class="start__project">Where Vision Meets Precision</a>
             </div>
 
             <div class="footer__cards">
@@ -59,7 +59,7 @@
                     <h4>03</h4>
                     <h5>Digital Experiences & Innovation</h5>
                     <p>
-                        We don’t just design interfaces—we design immersive, luxurious interactions. Every touchpoint is
+                        We don't just design interfaces—we design immersive, luxurious interactions. Every touchpoint is
                         an invitation
                         to feel, connect, and remember.
                     </p>
@@ -79,15 +79,18 @@
     </header>
 
     <!-- Floating Chat Toggle Button -->
-    <button id="chat-toggle" class="chatbot-fab" title="Ask S & A 🌟">💬</button>
+    <button id="chat-toggle" class="chatbot-fab" title="Ask S &amp; A 🌟" aria-label="Open chatbot">💬</button>
 
     <!-- Chatbot Container -->
-    <div class="chatbot-container">
-        <div class="chat-window" id="chat-window">
-            <div class="chat-header">S & A Assistant</div>
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-window">
+            <div class="chat-header">
+                <span>S &amp; A Assistant</span>
+                <span id="chat-close" class="chat-close">×</span>
+            </div>
             <div class="chat-messages" id="chat-messages">
                 <div class="chat-message-bot">
-                    ✨ Welcome to S & A Luxury. <br />
+                    ✨ Welcome to S &amp; A Luxury. <br />
                     We're honored to have you here. Tell us how we can craft brilliance together.
                 </div>
             </div>
