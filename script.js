@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // === 1. Card Animation with Intersection Observer ===
+ 
   const cards = document.querySelectorAll(".card");
 
-  // Create intersection observer for card animations
+  
   const cardObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
 
-  // Observe all cards
+ 
   cards.forEach((card) => {
     cardObserver.observe(card);
   });
 
-  // === 2. Read More Functionality for Cards ===
+
   cards.forEach((card) => {
     const para = card.querySelector("p");
     if (!para) return;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // === 3. Mobile Navigation Toggle ===
+
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
 
@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("show-nav");
 
-      // Toggle hamburger icon
       if (navLinks.classList.contains("show-nav")) {
         hamburger.innerHTML = "✕";
       } else {
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Close mobile menu when clicking on a link
+    
     const navLinksItems = navLinks.querySelectorAll("a");
     navLinksItems.forEach((link) => {
       link.addEventListener("click", function () {
@@ -91,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // === 4. Chatbot Functionality ===
+
   const chatbot = document.getElementById("chatbot");
   const chatToggle = document.getElementById("chat-toggle");
   const chatClose = document.getElementById("chat-close");
@@ -101,14 +100,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let isChatOpen = false;
 
-  // Toggle chatbot
+
   if (chatToggle && chatbot) {
     chatToggle.addEventListener("click", function () {
       toggleChat();
     });
   }
 
-  // Close chatbot
+
   if (chatClose && chatbot) {
     chatClose.addEventListener("click", function () {
       closeChat();
@@ -128,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       chatbot.classList.add("active");
       isChatOpen = true;
 
-      // Focus on input when chat opens
+     
       setTimeout(() => {
         if (chatInput) {
           chatInput.focus();
@@ -144,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // === 5. Chat Message Functionality ===
   function sendMessage() {
     if (!chatInput || !chatMessages) return;
 
@@ -188,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     chatMessages.appendChild(messageDiv);
 
-    // Scroll to bottom
+  
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
@@ -299,7 +297,7 @@ function safelyGetElement(id) {
   return element;
 }
 
-// === 14. Utility functions ===
+
 function debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
@@ -312,10 +310,8 @@ function debounce(func, wait) {
   };
 }
 
-// === 15. Performance optimization ===
-// Debounced scroll handler
 const handleScroll = debounce(() => {
-  // Add any scroll-based functionality here
+
 }, 100);
 
 window.addEventListener("scroll", handleScroll);
