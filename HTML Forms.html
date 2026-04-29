@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+
+    <style>
+      .button {
+        background-color: blue;
+      }
+
+      .form-group{
+        margin: 20px 0;
+      }
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+    <form action="/submit">
+      <input type="text" placeholder="Enter your name" />
+      <input type="number" />
+      <input type="email" />
+      <input type="password" />
+      <input type="file" />
+      <input type="submit" value="create an acoount" class="button" />
+
+      <div class="form-group">
+        <label for="name"> Enter your name</label>
+        <input type="text" id="name" required/>
+      </div>
+      <div class="form-group">
+      <label for="email">Enter your email</label>
+      <input type="text" id="email" required/>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+    <script>
+        let currentTime = new Date();
+
+            console.log(currentTime);
+
+            console.log(currentTime.getDay());
+
+            console.log(currentTime.getFullYear());
+
+            console.log(currentTime.getMonth());
+
+            console.log(currentTime.getDate());
+
+            console.log(currentTime.getHours());
+
+            console.log(currentTime.getMinutes());
+
+            console.log(currentTime.getSeconds());
+            function formatDate(date) {
+                let days = [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ];
+
+                let months = [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ];
+
+                let currentYear = date.getFullYear();
+                let currentDay = days[date.getDay()];
+                let currentMonth = months[date.getMonth()];
+                let currentDate = date.getDate();
+
+                let formattedDate = `Today is ${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+
+                return formattedDate;
+            }
+
+            console.log(formatDate(currentTime));
+
+                function showSignUpFormValues(event) {
+                    event.preventDefault();
+                    let emailInput = document.querySelector("#email-input");
+                    let usernameInput = document.querySelector("#username-input");
+                    alert(`Your email is ${emailInput.value}`);
+                    alert(`Your username is ${usernameInput.value}`);
+                }
+
+                let signUpForm = document.querySelector("#signup-form");
+                signUpForm.addEventListener("submit", showSignUpFormValues);
+                      
+
+// APIS
+
+
+    let url = "https://jsonplaceholder.typicode.com/comments";
+
+    function showFirstComment(response) {
+        console.log(response.data[0].email);
+    }
+
+    axios.get(url).then(showFirstComment);
+
+
+
+
+    // Weather API
+
+    function displayTemperature(response) {
+            let temperatureElement = document.querySelector("#current-temperature");
+            let temperature = Math.round(response.data.temperature.current);
+            let cityElement = document.querySelector("#current-city");
+            cityElement.innerHTML = response.data.city;
+            temperatureElement.innerHTML = temperature;
+        }
+
+        function search(event) {
+            event.preventDefault();
+            let searchInputElement = document.querySelector("#search-input");
+            let city = searchInputElement.value;
+
+            let apiKey = "b2a5adcct04b33178913oc335f405433";
+            let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+            axios.get(apiUrl).then(displayTemperature);
+        }
+
+        function formatDate(date) {
+            let minutes = date.getMinutes();
+            let hours = date.getHours();
+            let day = date.getDay();
+
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+
+            if (hours < 10) {
+                hours = `0${hours}`;
+            }
+
+            let days = [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ];
+
+            let formattedDay = days[day];
+            return `${formattedDay} ${hours}:${minutes}`;
+        }
+
+        let searchForm = document.querySelector("#search-form");
+        searchForm.addEventListener("submit", search);
+
+        let currentDateELement = document.querySelector("#current-date");
+        let currentDate = new Date();
+
+        currentDateELement.innerHTML = formatDate(currentDate);
+      
+      
+
+
+    </script>
+</body>
+</html>

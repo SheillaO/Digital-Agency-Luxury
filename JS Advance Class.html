@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1> SheCodes Challenge </h1>
+
+  <script>
+    let country = "Guinea Bissau";
+    country = country.replace(`Guinea Bissau`, "Guinea-Bissau");
+    console.log(country);
+    
+    
+
+    let purpose = `Sydney   `;
+    purpose = purpose.trim();
+    console.log(purpose);
+
+
+
+    let place = `School`;
+    place = place.toUpperCase();
+    console.log(place);
+
+    let attraction = `opera House`;
+    attraction = attraction.toLowerCase();
+    console.log(attraction);
+    
+  
+
+    let sentence = `I went to visit the ${attraction} in ${city} right next to my ${place}. Now I'm getting ready for my trip to ${country}!`;
+    console.log(sentence);
+
+
+    let price = 4.5;
+    console.log(Math.round(price));
+    console.log(Math.floor(price));
+    console.log(Math.ceil(price));
+
+
+// Create an array weekDays with all days of the week, console log the array
+
+let weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+console.log(weekDays);
+
+
+// Log ‘Monday’ and ‘Sunday’
+  console.log(weekDays[0]);
+  console.log(weekDays[6]);
+
+  // Change 'Sunday' by 'Funday'
+  // Log the array
+  weekDays[6] = `Funday`;
+  console.log(weekDays);
+
+
+  // Remove Monday and Tuesday
+  // Log the array
+  weekDays.splice(0,2);
+  console.log(weekDays);
+
+    // Log every day of the week this way: `Temperature on Monday is 18 degrees`
+    weekDays.forEach(function(day) {
+      console.log(`Temperature on ${day} is 18 degrees`);
+    });
+
+    // Create an object weather and console log it
+    // let weather = {};
+    // console.log(weather);
+
+    //Create an object weather with properties of temp and humidity and console log the object
+    let weather = {
+      temperature: 25,
+      humidity: 60
+    };
+    console.log(weather);
+
+    //console log the humidity and the temperature
+    console.log(`Humidity: ${weather.humidity}%`);
+    console.log(`Temperature: ${weather.temperature}°C`);
+
+    //Add a property windSpeed and console log it
+    weather.windSpeed = 15;
+    console.log(`Wind Speed: ${weather.windSpeed} km/h`);
+
+    //Console log the wind speed, the temperature and the humidity using the square brackets syntax
+    console.log(`Wind Speed: ${weather['windSpeed']} km/h`);
+    console.log(`Temperature: ${weather['temperature']}°C`);
+    console.log(`Humidity: ${weather['humidity']}%`);
+
+    //Create an object or an array of objects called `forecast` with each day’s temperature, and console log it
+    let forecast = [
+      { day: "Monday", temperature: 18 },
+      { day: "Tuesday", temperature: 20 },
+      { day: "Wednesday", temperature: 22 },
+      { day: "Thursday", temperature: 21 },
+      { day: "Friday", temperature: 19 },
+      { day: "Saturday", temperature: 23 },
+      { day: "Sunday", temperature: 24 }
+    ];
+    console.log(forecast);
+    console.log(forecast[0].temperature);
+    console.log(forecast[0].day);
+
+    console.log(`The temperature for tomorrow will be ${forecast[0].temperature}`);
+    console.log(`The temperature after tomorrow will be ${forecast[1].temperature}°C`);
+
+      let paris = {
+        name: "Paris",
+        country: "France",
+        language: "French",
+        temperature: 18,
+        capitalCity: true
+      };
+
+      console.log(paris.temperature);
+
+
+    //Given an object called paris, log its temperature
+ 
+
+    let Paris = paris.name;
+    let parisTemperature = paris.temperature;
+    console.log(`The temperature in ${Paris} is ${parisTemperature}°C`);
+
+
+    //Create an object called sydney similar to paris and log its temperature (use fake data)
+
+    let Sydney = {
+        name: "Sydney",
+        country: "Australia",
+        language: "English",
+        temperature: 22,
+        capitalCity: false
+      };
+
+
+    console.log(Sydney.temperature);
+
+    let sydneyTemperature = Sydney.temperature;
+    console.log(`The temperature in ${Sydney.name} is ${sydneyTemperature}°C`);
+
+    //Create an array with 3 different Australian city names only and log each name
+      
+    let australianCities = ["Sydney", "Melbourne", "Brisbane"];
+    australianCities.forEach(function(city) {
+      console.log(city);
+    });
+
+    console.log(australianCities[0]);
+    console.log(australianCities[1]);       
+    console.log(australianCities[2]);
+
+
+
+    //Create an array of 3 cities with the same properties as paris and console log each city temperature
+let cities = [
+  {
+    name: "Cape Town",
+    country: "South Africa",
+    language: "Afrikaans",
+    temperature: 20,
+    capitalCity: true
+  },
+  {
+    name: "California",
+    country: "USA",
+    language: "English",
+    temperature: 25,
+    capitalCity: false
+  },
+  {
+    name: "Tokyo",
+    country: "Japan",
+    language: "Japanese",
+    temperature: 30,
+    capitalCity: true
+  }
+];
+
+console.log(cities[0].name);
+console.log(cities[0].temperature);
+
+  console.log(cities[1].name);
+  console.log(cities[1].temperature);
+
+    console.log(cities[2].name);
+    console.log(cities[2].temperature);
+
+
+
+    console.log(paris.temperature);
+      console.log(sydney.temperature);
+
+      console.log(australianCities[0]);
+      console.log(australianCities[1]);
+      console.log(australianCities[2]);
+
+      console.log(cities[0].name);
+      console.log(cities[0].temperature);
+
+      console.log(cities[1].name);
+      console.log(cities[1].temperature);
+
+      console.log(cities[2].name);
+      console.log(cities[2].temperature);
+
+      let weather = {
+        paris: {
+          temp: 19.7,
+          humidity: 80,
+        },
+        tokyo: {
+          temp: 17.3,
+          humidity: 50,
+        },
+        lisbon: {
+          temp: 30.2,
+          humidity: 20,
+        },
+        "san francisco": {
+          temp: 20.9,
+          humidity: 100,
+        },
+        oslo: {
+          temp: -5,
+          humidity: 20,
+        }
+      };
+
+    
+            let city = prompt("Enter a city?");
+            city = city.toLowerCase();
+            if (weather[city] !== undefined) {
+              let temperature = weather[city].temp;
+              let humidity = weather[city].humidity;
+              let celsiusTemperature = Math.round(temperature);
+              let fahrenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+
+              alert(
+                `It is currently ${celsiusTemperature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
+              );
+            } else {
+              alert(
+                `Sorry we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
+              );
+                   }
+
+  // Challenge
+  // 1. Create a function isWindy and alert 'It is windy'
+  // 2. Call the function twice
+
+  function isWindy() {
+    alert("It is windy");
+  }
+
+  let weather = ({ windy })
+
+    alert("It is windy");
+
+
+  isWindy();
+  isWindy();
+
+
+
+  function isWindy(speed) {
+      if (speed > 5) {
+        alert("It is windy");
+      } else {
+        alert("It is not windy");
+      }
+    }
+
+    isWindy(6);
+    isWindy(4);
+
+
+
+    // Challenge 1
+      // 1. Modify the function is Windy and return true if the speed is greater than 5 and false if not
+      // 2. Call the function and alert ‘It is windy’ if it is windy, Else, alert ‘It is not windy’
+
+      function isWindy(speed) {
+
+        if (speed > 5)
+          return true
+
+        else
+          return false
+      }
+  if (isWindy(5)) {
+    alert("It is windy");
+  } else {
+    alert("It is not windy");
+  }
+
+  // Challenge 2
+  // 1. Add unit parameter to isWindy
+  // 2. if greater than 5 and unit is metric, return true, else return false
+  // 3. Test both scenarios
+  // isWindy(2, 'imperial') should return false
+  // isWindy(20, 'metric') should return true
+
+  function isWindy(speed, unit) {
+    if (unit === 'metric') {
+      return speed > 5;
+    } else {
+      return speed > 10;
+    }
+  }
+
+    let speed = prompt("What is the wind speed today?")
+
+    if (speed > 5) return true;
+    else return false;
+  if (isWindy(2, 'imperial')) {
+    alert("It is windy");
+    return true;
+
+  } else {
+    isWindy(20, 'metric')
+    return false;
+    alert("It is not windy");
+  }
+
+
+
+  function isWindy(speed) {
+      if (speed > 5)
+        return true;
+      else {
+        return false;
+      }
+    }
+    if (isWindy(5)) {
+      alert("It is windy");
+    } else {
+      alert("It is not windy");
+    }
+
+  // Challenge 2
+    // 1. Add unit parameter to isWindy
+    // 2. if greater than 5 and unit is metric, return true, else return false
+    // 3. Test both scenarios
+    // isWindy(2, 'imperial') should return false
+    // isWindy(20, 'metric') should return true
+
+
+    function isWindy(speed, unit) {
+      if (unit === "metric") {
+      return speed > 5;
+      } else if (unit === "imperial") {
+      return speed > 10;
+      } else {
+      return false;
+      }
+    }
+
+    if (isWindy(2, "imperial")) {
+      alert("It is windy");
+    } else {
+      alert("It is not windy");
+    }
+
+    if (isWindy(20, "metric")) {
+      alert("It is windy");
+    } else {
+      alert("It is not windy");
+    }
+
+    
+
+    let currentTime = new Date();
+
+      // Challenge 1
+      console.log(currentTime);
+
+      // Challenge 2
+      console.log(currentTime.getMilliseconds());
+
+      // Challenge 3
+      console.log(currentTime.getDay());
+
+      // Challenge 4
+      console.log(currentTime.getFullYear());
+
+      // Challenge 5
+      console.log(currentTime.getMonth());
+
+      // Challenge 6
+
+      // Challenge 7
+      function formatDate(date) {
+        let days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ];
+
+        let months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ];
+
+        let currentYear = date.getFullYear();
+        let currentDay = days[date.getDay()];
+        let currentMonth = months[date.getMonth()];
+        let currentDate = date.getDate();
+
+        let formattedDate = `Today is ${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+
+        return formattedDate;
+      }
+
+      console.log(formatDate(currentTime));
+
+//// Challenge 1
+  // Log li with id special
+      <li class="country" id="special">Portugal 🇵🇹</li>
+
+      let specialcountry = document.querySelector("#special");
+      console.log(specialcountry);
+
+      // Challenge 2
+        // Log all li with class of country
+
+        <ul>
+            <li class="country">France 🇫🇷</li>
+            <li class="country">USA 🇺🇸</li>
+            <li class="country" id="special">Portugal 🇵🇹</li>
+        </ul>
+
+        let countries = document.querySelectorAll(".country");
+        console.log(countries);
+        
+     // Challenge 3
+      // Add class special to the li with id special
+ 
+      specialCountry.classList.add(".special");
+
+
+
+
+      // Challenge 4
+        // In your code, replace the content of the element with id special
+        // by your favorite country (other than Portugal of course)
+
+      specialCountry.innerHTML = '<ul><li>Australia 🇦🇺</li><li>Canada</li></ul>';
+      
+
+        // Challenge 1
+          // Add click eventListener to the button. Alert `It is 18 degrees`
+
+function showTemperature() {
+  alert("It is 18 degrees");
+}
+
+          let element = document.querySelector("#temperature")
+          element.addEventListener("click", showTemperature)
+
+
+  // Challenge 2
+  // When the button is clicked, replace button label by ‘18 degrees’
+
+  function showTemperature(event) {
+    event.preventDefault();
+    let link = document.querySelector("#showTemperature");
+    link.innerHTML = "18 degrees";
+  }
+
+  let showTemperatureButton = document.querySelector("#showTemperature");
+  showTemperatureButton.addEventListener("click", showTemperature);
+
+  
+    function sayHooray() {
+      alert("Hooray!");
+    }
+
+    let clickMeButton = document.querySelector("#special-button");
+    clickMeButton.addEventListener("click", sayHooray);
+
+    // Challenge 2
+    function showPassword(event) {
+      event.preventDefault();
+      let passwordInput = document.querySelector("#password-input");
+      alert(`🙀 Your super secret password is ${passwordInput.value}`);
+    }
+
+    let passwordForm = document.querySelector("#password-form");
+    passwordForm.addEventListener("submit", showPassword);
+
+    // Challenge 3
+    function showSignUpFormValues(event) {
+      event.preventDefault();
+      let emailInput = document.querySelector("#email-input");
+      let usernameInput = document.querySelector("#username-input");
+      alert(`Your email is ${emailInput.value}`);
+      alert(`Your username is ${usernameInput.value}`);
+    }
+
+    let signUpForm = document.querySelector("#signup-form");
+    signUpForm.addEventListener("submit", showSignUpFormValues);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
